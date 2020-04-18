@@ -119,14 +119,17 @@ $(document).ready(function(){
 
 				$(li).click(()=>{
 
-					$.get(' https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/comments', (comments)=>{
+					$.get(' https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/comments', {postID: i}, (comments)=>{
 
 						var j = 0;
-						comments.forEach(()=>{
+						//comments.forEach(()=>{
 							j ++;
 							console.log(comments[j]);
 							display.text(JSON.stringify(comments[j]));
-						 })
+							var a = $('<a>Back to Posts</a>');
+							display.append(a);
+
+						//})
 
 					})
 				})
